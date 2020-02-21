@@ -16,10 +16,15 @@ public class Que13
         System.out.println("Eneter the age");
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         int age=Integer.parseInt(br.readLine());
-        if(age>18)
+        if(age>17)
             System.out.println("You are adult");
         else{
-            throw new AgeNotFoundException("You are not adult");
+            try{
+                throw new AgeNotFoundException("You are not adult");
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
